@@ -1,0 +1,56 @@
+﻿<Window x:Class="WPFMVVM.PessoaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFMVVM"
+        mc:Ignorable="d"
+        Title="PessoaWindow" Height="550" Width="300" WindowStyle="ToolWindow">
+    <Grid Margin="3">
+        <StackPanel Orientation="Vertical" >
+            <TextBlock Text="Id"/>
+            <TextBox Text="{Binding Id}" IsEnabled="False"/>
+            <TextBlock Text="Nome"/>
+            <TextBox Text="{Binding Nome}" Name="nome"/>
+            <TextBlock Text="Sobrenome"/>
+            <TextBox Text="{Binding Sobrenome}" Name="sobrenome"/>
+            <TextBlock Text="CPF"/>
+            <TextBox Text="{Binding CPF}" Name="cpf" MaxLength="11"/>
+            <TextBlock Text="Data de Nascimento"/>
+            <DatePicker SelectedDate="{Binding DataNascimento}" Name="datanascimento"/>
+            <TextBlock Text="Genero"/>
+            <ComboBox Name="GeneroComboBox" Text="{Binding Genero}" />
+            <TextBlock Text="Logradouro" />
+            <TextBox Text="{Binding Logradouro}" Name="logradouro" />
+            <TextBlock Text="Numero" />
+            <TextBox Text="{Binding Numero}" Name="numero" />
+            <TextBlock Text="Bairro" />
+            <TextBox Text="{Binding Bairro}" Name="bairro" />
+            <TextBlock Text="Cidade" />
+            <TextBox Text="{Binding Cidade}" Name="cidade" />
+            <TextBlock Text="Estado" />
+            <TextBox Text="{Binding Estado}" Name="estado" />
+            <TextBlock Text="Complemento" />
+            <TextBox Text="{Binding Complemento}" />
+            <TextBlock Text="CEP" />
+            <TextBox Text="{Binding Cep}" Name="cep"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="OKButton" 
+                        Grid.Column="0"
+                        Content="OK" 
+                        Margin="3"
+                        IsDefault="True" 
+                        Click="OKButton_Click"/>
+                <Button Grid.Column="1" 
+                        Content="Cancelar" 
+                        Margin="3"
+                        IsCancel="True"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
